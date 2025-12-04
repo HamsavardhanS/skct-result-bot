@@ -161,7 +161,7 @@ def main():
 
     # Daily cleanup at 12:00 (server time)
     # If you want 12:00 IST and server is UTC, use "06:30" instead.
-    schedule.every().day.at("6:30").do(delete_old_messages)
+    schedule.every().day.at("06:30").do(delete_old_messages)
 
     while True:
         schedule.run_pending()
