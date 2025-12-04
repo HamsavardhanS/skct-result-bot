@@ -8,6 +8,9 @@
   "nixpacks": {
     "packages": [
       "google-chrome-stable"
-    ]
+    ],
+    "env": {
+      "PYTHON_VERSION": "3.10.12"
+    }
   }
 }
