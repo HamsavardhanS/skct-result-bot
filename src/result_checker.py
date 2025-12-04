@@ -51,11 +51,11 @@ def check_result_status():
         subprocess.Popen(["python", "result_scraper.py"])
         return schedule.CancelJob
     else:
-        bot.send_message(chat_id=CHAT_ID, text="⏳ Result Not Yet Released. Checking again in 15 mins...")
+        bot.send_message(chat_id=CHAT_ID, text="⏳ Result Not Yet Released. Checking again in 5 mins...")
 
 def main():
     bot.send_message(chat_id=CHAT_ID, text="🟢 Result Checker Started!")
-    schedule.every(15).minutes.do(check_result_status)
+    schedule.every(5).minutes.do(check_result_status)
 
     while True:
         schedule.run_pending()
