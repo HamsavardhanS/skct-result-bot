@@ -1,0 +1,28 @@
+# Python cache & build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Environment files
+config/.env
+
+# Logs
+logs/
+*.log
+
+# WebDrivers cache (Selenium)
+drivers/
+.chromedriver/
+.wdm/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+ENV/
+.vscode/
+.idea/
