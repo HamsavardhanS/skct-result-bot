@@ -5,3 +5,5 @@ schedule==1.2.0
 selenium==4.10.0
 python-dotenv==1.0.0
 webdriver-manager==4.0.1
+gunicorn==21.2.0
+chromium==0.0.1

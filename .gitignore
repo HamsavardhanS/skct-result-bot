@@ -9,6 +9,7 @@ __pycache__/
 config/.env
 
 # Logs
+drivers/
 logs/
 *.log
 

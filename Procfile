@@ -1,0 +1,1 @@
+worker: python src/result_checker.py

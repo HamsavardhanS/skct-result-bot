@@ -8,6 +8,10 @@ from telegram import Bot
 import subprocess
 from pathlib import Path
 from dotenv import load_dotenv
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
 # Load .env file
 env_path = Path(__file__).resolve().parent.parent / "config" / ".env"
@@ -42,12 +46,16 @@ def detect_result_link():
     return None
 
 def extract_result():
-    options = Options()
-    options.add_argument("--headless=new")
+    chrome_opts = Options()
+    chrome_opts.add_argument("--headless=new")
+    chrome_opts.add_argument("--no-sandbox")
+    chrome_opts.add_argument("--disable-dev-shm-usage")
+    chrome_opts.add_argument("--disable-gpu")
+    chrome_opts.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Edge(
-        service=Service(EdgeChromiumDriverManager().install()),
-        options=options
+    driver = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install()),
+        options=chrome_opts
     )
 
     driver.get(RESULT_PAGE)
