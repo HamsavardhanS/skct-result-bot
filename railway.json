@@ -4,5 +4,10 @@
   },
   "deploy": {
     "startCommand": "python src/result_checker.py"
+  },
+  "nixpacks": {
+    "packages": [
+      "google-chrome-stable"
+    ]
   }
 }
