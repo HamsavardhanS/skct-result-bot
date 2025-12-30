@@ -154,14 +154,14 @@ def delete_old_messages():
 # ---------- Main loop ----------
 
 def main():
-    bot.send_message(chat_id=CHAT_ID, text="🟢 Result Checker Active (5-min checks, noon cleanup)!")
+    bot.send_message(chat_id=CHAT_ID, text="🟢 Result Checker Active (15-min checks, noon cleanup)!")
 
     # Check every 5 minutes
-    schedule.every(5).minutes.do(check_result_status)
+    schedule.every(15).minutes.do(check_result_status)
 
     # Daily cleanup at 12:00 (server time)
     # If you want 12:00 IST and server is UTC, use "06:30" instead.
-    schedule.every().day.at("06:30").do(delete_old_messages)
+    schedule.every().day.at("05:30").do(delete_old_messages)
 
     while True:
         schedule.run_pending()
